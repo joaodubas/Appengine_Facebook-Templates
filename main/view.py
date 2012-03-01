@@ -3,6 +3,7 @@ import os
 import settings
 from core.handler import CoreHandler
 from utils.decorators import user_required
+from utils.facebook_perms import fb_perms
 
 BASE_URL = 'http://www.facebook.com/dialog/oauth?{qs}'
 BASE_QS = 'client_id={client_id}&redirect_uri={url}{perms}'
@@ -11,7 +12,7 @@ BASE_QS = 'client_id={client_id}&redirect_uri={url}{perms}'
 class Connect(CoreHandler):
     def get(self):
         auth_conf = {
-            'perms': '&scope=email,publish_stream',
+            'perms': fb_perms.create_scope(settings.FACEBOOK_PERMS),
             'client_id': settings.FACEBOOK_APP_ID
         }
         if not self.user:
