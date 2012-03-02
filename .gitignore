@@ -1,7 +1,0 @@
-*.pyc
-.DS_Store
-_matrix/
-.svn
-*.db
-.project
-.pydevproject
