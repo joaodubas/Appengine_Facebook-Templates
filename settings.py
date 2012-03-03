@@ -1,4 +1,16 @@
 # -*- coding: utf-8 -*-
+"""Main configuration file for the application, containing the credentials for
+the facebook app.
+
+To obtain the application credentials visit the url:
+
+    https://graph.facebook.com/oauth/access_token
+
+Pass to this url a querystring with the following parameters:
+
+    clicent_id=APP_ID&client_secret=APP_SECRET&grant_type=client_credentials
+
+"""
 import os
 
 ADMIN_LIST = ['1', '2']
@@ -18,6 +30,3 @@ if os.environ['SERVER_SOFTWARE'].startswith('Dev'):
     EXTERNAL_HREF = 'DEV_APP_URL'
     FACEBOOK_CANVAS_NAME = 'DEV_FB_CANVAS_NAME-stop-dev'
     FACEBOOK_PERMS = ['email', 'publish_stream']
-
-# How to get APP credentials
-# https://graph.facebook.com/oauth/access_token?client_id=APP_ID&client_secret=APP_SECRET&grant_type=client_credentials

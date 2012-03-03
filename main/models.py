@@ -1,7 +1,9 @@
-_USER_FIELDS = u'name, email, picture, friends'
-
+# -*- coding: utf-8 -*-
 from google.appengine.ext import db
 from utils.facebook import Facebook
+
+_USER_FIELDS = u'name, email, picture, friends'
+
 
 class User(db.Model):
     user_id = db.StringProperty(required=True)
